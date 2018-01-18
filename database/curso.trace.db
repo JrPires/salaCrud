@@ -1,0 +1,9 @@
+2018-01-17 19:53:41 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "*[*]INSERT INTO CLIENTE (ID,NOME,EMAIL) VALUE(1, 'jose', 'jpires@hotmail.com') "; SQL statement:
+*INSERT INTO cliente (id,nome,email) VALUE(1, 'jose', 'jpires@hotmail.com') [42000-196]
+2018-01-17 20:01:27 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "*[*]INSERT INTO CLIENTE (ID,NOME,EMAIL) VALUES(1, 'jose', 'jpires@hotmail.com') "; SQL statement:
+*INSERT INTO cliente (id,nome,email) VALUES(1, 'jose', 'jpires@hotmail.com') [42000-196]
+2018-01-17 21:05:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "jose"; SQL statement:
+SELECT * from cliente WHERE nome [22018-196]
