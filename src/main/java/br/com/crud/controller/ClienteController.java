@@ -3,6 +3,8 @@ package br.com.crud.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -20,14 +22,25 @@ public class ClienteController {
 		service.save(cliente);
 	}
 
-	public void delete(Long cliente) {
+	//public void delete(Long cliente) {
 		service.delete(cliente);
 
 	}
+	@GetMapping("apagar")
+	public ResponseEntity<List<Cliente>> delete(){
+		List<Cliente>clientes = 
+		
+		
+		
 
 	@GetMapping("listar")
-	public List<Cliente> listar() {
-		return service.listar();
+	public ResponseEntity<List<Cliente>> listar() {
+		List<Cliente>clientes = service.listar();
+		if(clientes.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+				
 	}
 
 	public Cliente buscarPorId(Long idCliente) {
